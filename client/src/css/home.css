@@ -1,0 +1,128 @@
+/* .bg-img{
+    background: url(../images/bg_codefox.png) no-repeat ;
+    background-color:#464646;
+    background-position: center center;
+    background-size: content;
+    background-attachment: fixed;
+    height: 34em;
+} */
+
+.bg-img{
+    background: url(../images/bg_codefox.png) no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    height: 650px;
+}
+
+
+
+.home-container{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 50px;
+    background-color: #fafafa;
+} 
+
+.home-width {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.headline {
+    font-size: 240%;
+    font-family: Arvo;
+    font-style: italic;
+    text-align: center;
+}
+
+.sub-headline {
+    font-family: Oswald;
+    text-align: center;
+    font-size: 180%;
+}
+
+.quotes {
+    margin: 0 auto;
+    box-shadow: 0 4px 1px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+
+.quotes h1 {
+    margin: 20px;
+    text-align: center;
+    font-family: Yellowtail;
+    color: #c3073f;
+}
+
+.quotes li {
+    padding-bottom: 10px;
+    font-size: 1.3em;
+    font-family: Lobster, monospace;
+    font-weight: 400;
+}
+
+.home-container h1{
+    text-align: center;
+    margin: 45px auto;
+    font-family: Yellowtail;
+    color:#c3073f;
+}
+
+.more-blog {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.more-blog-btn {
+    background-color: #ff0000;
+    border: 1px solid #ff0000;
+    font-weight: bold;
+}
+
+.more-blog-btn:hover {
+    background-color: #FA8072;
+    border: 1px solid #FA8072;
+    transition-delay: 0.1s;
+}
+
+.carousel-item img{
+    height: 500px;
+}
+
+@media screen and (max-width: 768px){
+    .carousel-item img{
+        height: 400px;
+    }
+
+    .bg-img{
+        background: url(../images/bg_tablet.png) no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .bg-img{
+        background: url(../images/bg_mobile2.png) no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+
+    .carousel-item img{
+        height: 300px;
+    }
+
+    .quotes li {
+        font-size: 1em;
+    }
+
+    .carousel-item p{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 355px){
+    .carousel-item h3{
+        font-size: 1.5rem;
+    }
+}

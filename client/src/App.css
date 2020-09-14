@@ -1,0 +1,4 @@
+.bg-light.scrolled {
+  background-color: white!important;
+  transition:500ms ease;
+}

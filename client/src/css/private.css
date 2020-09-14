@@ -1,0 +1,34 @@
+.main-container-200{
+   width: 100%;
+   margin-left: 5px;
+   margin-right: 70px;
+}
+
+.color-adjust-orange{
+   color: #ec6952;
+   margin-top: 40px;
+}
+
+.footer-2{
+   background-color :  #303a40;
+   color:  white;
+   height:  50px;
+   text-align: center;
+   position: absolute;
+   padding-top: 15px;
+   width: 100%;
+   margin-top: 50px;
+}
+
+.nav-1{
+   border: 1px solid red;
+   width: 250px;
+   height: 50px;
+   margin: 0px auto;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   background: #ec6952;
+   color: white;
+   font-size: 2rem;
+   text-align: center;
+} 

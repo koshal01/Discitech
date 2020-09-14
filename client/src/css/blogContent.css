@@ -1,0 +1,116 @@
+.content-box{
+    padding: 0px;
+}
+
+.blog-title{
+    text-align: center;
+    font-size: 35px;
+}
+
+.blog-contain{
+    margin: 0 auto;
+    width: 70%;
+    background-color: white;
+}
+
+.writing{
+    padding: 60px;
+    padding-bottom: 40px;
+    border-bottom: 3px solid #F0F3F4;
+}
+
+.writer{
+    position: relative;
+    color: #484848;
+    padding-left:15px;
+    padding-top:15px;
+}
+
+.user-image{
+    height: 60px;
+    width: 60px;
+}
+
+.user-name{
+    display:inline-block;
+    width:50%;
+    vertical-align:middle;
+    margin-left: 1rem;
+    font-weight: 600;
+    font-size: large;
+}
+
+.user-description{
+    font-size: small;
+    margin:20px 0px;
+    line-height: 1.65;
+}
+
+.user-blogs{
+    padding-left:15px;
+}
+
+.wp-block-image{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.blog-title h1 {
+    margin-bottom: 35px;
+}
+
+@media screen and (max-width: 1024px){
+    .wp-block-image img {
+        width: 450px;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .blog-contain {
+        width: 80%;
+    }
+
+    .writing {
+        padding: 45px;
+    }
+}
+
+@media screen and (max-width: 686px){
+    .wp-block-image img {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .wp-block-image img {
+        width: 300px;
+        height: 200px;
+    }
+
+    .blog-contain{
+        width: 100%;
+    }
+
+    .content-box {
+        padding: 10px;
+    }
+
+    .writing {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .wp-block-image img {
+       width: 220px;
+       height: 170px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .blog-title h1{
+        font-size: 25px;
+    }
+}
