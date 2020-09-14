@@ -59,7 +59,7 @@ class Login extends Component{
     }
 
     googleAuth(){
-        axios.get('http://localhost:5000/auth/google',{
+        axios.get('https://code-fox-01.herokuapp.com/auth/google',{
             headers: {"Access-Control-Allow-Origin": "*"}
         })
         .then((res) => {
@@ -97,7 +97,9 @@ class Login extends Component{
 
 
     githubAuth(){
-        axios.get('/auth/github')
+        axios.put('https://code-fox-01.herokuapp.com/auth/github',{
+            headers: {"Access-Control-Allow-Origin": "*"}
+        })
         .then((res) => {
             if(res.data.success === true){
                 localStorage.setItem("jwt",res.data.token);
@@ -133,7 +135,9 @@ class Login extends Component{
 
 
     facebookAuth(){
-        axios.get('/auth/facebook')
+        axios.post('/auth/facebook',{
+            headers: {"Access-Control-Allow-Origin": "*"}
+        })
         .then((res) => {
             if(res.data.success === true){
                 localStorage.setItem("jwt",res.data.token);
