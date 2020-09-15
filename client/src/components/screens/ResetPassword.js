@@ -3,7 +3,6 @@ import axios from 'axios';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import validator from 'validator';
-import { Link } from 'react-router-dom';
 
 class ResetPassword extends Component{
 

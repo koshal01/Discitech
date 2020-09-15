@@ -1,7 +1,7 @@
 import React ,{Component} from'react';
 import "../../css/contactus.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook,faGoogle,faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook,faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

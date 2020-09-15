@@ -97,7 +97,7 @@ class Login extends Component{
 
 
     githubAuth(){
-        axios.put('https://code-fox-01.herokuapp.com/auth/github',{
+        axios.get('https://code-fox-01.herokuapp.com/auth/github',{
             headers: {"Access-Control-Allow-Origin": "*"}
         })
         .then((res) => {
@@ -135,13 +135,13 @@ class Login extends Component{
 
 
     facebookAuth(){
-        axios.post('/auth/facebook',{
-            headers: {"Access-Control-Allow-Origin": "*"}
-        })
-        .then((res) => {
-            if(res.data.success === true){
-                localStorage.setItem("jwt",res.data.token);
-                localStorage.setItem("user",JSON.stringify(res.data.user));
+        fetch('/auth/facebook', {
+            method: 'get'
+        }).then(res=>res.json())
+        .then(result=>{
+            if(result.success === true){
+                localStorage.setItem("jwt",result.token);
+                localStorage.setItem("user",JSON.stringify(result.user));
              
                 toast.success('You have successfully signIn through Facebook.', {
                     position: "top-center",
@@ -154,7 +154,7 @@ class Login extends Component{
                 });
                 this.props.history.push('/');
             } 
-            else if(res.data.success === false){
+            else if(result.success === false){
                 toast.error('Failed Sign In', {
                     position: "top-center",
                     autoClose: 5000,
@@ -169,6 +169,41 @@ class Login extends Component{
         .catch((error) => {
             console.log(error);
         })
+
+        // axios.get('/auth/facebook',{
+        //     headers: {"Access-Control-Allow-Origin": "*"}
+        // })
+        // .then((res) => {
+        //     if(res.data.success === true){
+        //         localStorage.setItem("jwt",res.data.token);
+        //         localStorage.setItem("user",JSON.stringify(res.data.user));
+             
+        //         toast.success('You have successfully signIn through Facebook.', {
+        //             position: "top-center",
+        //             autoClose: 5000,
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //             progress: undefined,
+        //         });
+        //         this.props.history.push('/');
+        //     } 
+        //     else if(res.data.success === false){
+        //         toast.error('Failed Sign In', {
+        //             position: "top-center",
+        //             autoClose: 5000,
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //             progress: undefined
+        //         });
+        //     }
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // })
     }
 
 
@@ -272,7 +307,7 @@ class Login extends Component{
                                 </div>
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faGoogle}/></span>
-                                    <button className="social-6" onClick={this.googleAuth}>Google Login</button>
+                                    <a href="https://code-fox-01.herokuapp.com/auth/google"><button className="social-6" >Google Login</button></a>
                                 </div>
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faGithub} /></span>

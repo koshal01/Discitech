@@ -1,7 +1,7 @@
 import React ,{Component} from'react';
 import '../../css/footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook,faGoogle,faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook,faGoogle,faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope,faPhone} from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -148,7 +148,7 @@ class Footer extends Component {
 			         	    <span><FontAwesomeIcon icon={faEnvelope} />&nbsp; discitetech04@gmail.com</span>
 			         	</div>
 			         	<div className="socials">
-			         	    <a href="#" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} className="facebook" /></a>
+			         	    <a href="https://www.facebook.com/profile.php?id=100040747339400" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebook} className="facebook" /></a>
 			         	    <a href="https://www.gmail.com" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGoogle} className="goo" /></a>
 			         	    <a href="https://www.instagram.com/discitetech" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} className="instagram" /></a>
 			         	</div>
@@ -158,7 +158,7 @@ class Footer extends Component {
 			            <ul>
 			            <Link to="/Blogs"><li>Blogs</li></Link>
 			            <a href="/about#team"><li>Team</li></a>
-			            <a href="#"><li>Terms and Condition</li></a>
+			            <a href="/Privacy"><li>Terms and Condition</li></a>
 			            <Link to="/Privacy"><li>Privacy and Policy</li></Link>
 			            </ul>
 			         </div> 
