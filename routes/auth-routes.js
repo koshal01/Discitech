@@ -9,7 +9,7 @@ let allowCrossDomain = function(req, res, next) {
   next();
 }
 
-router.use(allowCrossDomain);
+router.use('/google', allowCrossDomain);
 
 router.get('/google',passport.authenticate('google',{ scope:['profile', 'email'] } ));
 router.get('/facebook',passport.authenticate('facebook'));

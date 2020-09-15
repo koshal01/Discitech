@@ -59,7 +59,7 @@ class Login extends Component{
     }
 
     googleAuth(){
-        axios.get('https://code-fox-01.herokuapp.com/auth/google',{
+        axios.get('/auth/google',{
             headers: {"Access-Control-Allow-Origin": "*"}
         })
         .then((res) => {
@@ -97,7 +97,7 @@ class Login extends Component{
 
 
     githubAuth(){
-        axios.get('https://code-fox-01.herokuapp.com/auth/github',{
+        axios.get('/auth/github',{
             headers: {"Access-Control-Allow-Origin": "*"}
         })
         .then((res) => {
@@ -135,47 +135,12 @@ class Login extends Component{
 
 
     facebookAuth(){
-        fetch('/auth/facebook')
-        .then(res=>res.json())
-        .then(result=>{
-            if(result.success === true){
-                localStorage.setItem("jwt",result.token);
-                localStorage.setItem("user",JSON.stringify(result.user));
-             
-                toast.success('You have successfully signIn through Facebook.', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                });
-                this.props.history.push('/');
-            } 
-            else if(result.success === false){
-                toast.error('Failed Sign In', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined
-                });
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-
-        // axios.get('/auth/facebook',{
-        //     headers: {"Access-Control-Allow-Origin": "*"}
-        // })
-        // .then((res) => {
-        //     if(res.data.success === true){
-        //         localStorage.setItem("jwt",res.data.token);
-        //         localStorage.setItem("user",JSON.stringify(res.data.user));
+        // fetch('/auth/facebook')
+        // .then(res=>res.json())
+        // .then(result=>{
+        //     if(result.success === true){
+        //         localStorage.setItem("jwt",result.token);
+        //         localStorage.setItem("user",JSON.stringify(result.user));
              
         //         toast.success('You have successfully signIn through Facebook.', {
         //             position: "top-center",
@@ -188,7 +153,7 @@ class Login extends Component{
         //         });
         //         this.props.history.push('/');
         //     } 
-        //     else if(res.data.success === false){
+        //     else if(result.success === false){
         //         toast.error('Failed Sign In', {
         //             position: "top-center",
         //             autoClose: 5000,
@@ -203,6 +168,41 @@ class Login extends Component{
         // .catch((error) => {
         //     console.log(error);
         // })
+
+        axios.get('/auth/facebook',{
+            headers: {"Access-Control-Allow-Origin": "*"}
+        })
+        .then((res) => {
+            if(res.data.success === true){
+                localStorage.setItem("jwt",res.data.token);
+                localStorage.setItem("user",JSON.stringify(res.data.user));
+             
+                toast.success('You have successfully signIn through Facebook.', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+                this.props.history.push('/');
+            } 
+            else if(res.data.success === false){
+                toast.error('Failed Sign In', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined
+                });
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
 
