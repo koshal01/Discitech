@@ -27,6 +27,7 @@ router.post('/facebook/redirect',
     if(user){
       const jwt = utils.issueJWT(user);
       res.json({ success: true, user: user, token: jwt.token, expiresIn: jwt.expires});
+      res.redirect('/');
     } else
     {
       res.status(401).json({ success: false, msg: "Not Authorized"});
