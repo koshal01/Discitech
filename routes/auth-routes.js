@@ -27,7 +27,7 @@ router.post('/facebook/redirect',
     if(user){
       const jwt = utils.issueJWT(user);
       res.json({ success: true, user: user, token: jwt.token, expiresIn: jwt.expires});
-      res.redirect('/');
+      res.redirect('/Contact');
     } else
     {
       res.status(401).json({ success: false, msg: "Not Authorized"});
@@ -37,13 +37,14 @@ router.post('/facebook/redirect',
 router.post('/github/redirect',
   passport.authenticate('github', { failureRedirect: '/Login' }),
   (req, res) => {
-    const user = req.user;
-    if(user){
-   	  const jwt = utils.issueJWT(user);
-	  res.json({ success: true, user: user, token: jwt.token, expiresIn: jwt.expires});
-    } else{
-   	  res.status(401).json({ success: false, msg: "Not Authorized"});
-    }
+    res.redirect('/');
+    // const user = req.user;
+    // if(user){
+   	//   const jwt = utils.issueJWT(user);
+	  // res.json({ success: true, user: user, token: jwt.token, expiresIn: jwt.expires});
+    // } else{
+   	//   res.status(401).json({ success: false, msg: "Not Authorized"});
+    // }
 });
  
 module.exports = router;
