@@ -303,7 +303,7 @@ class Login extends Component{
                             <div className="adjust-4">
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faFacebook} /></span>
-                                    <a href="https://code-fox-01.herokuapp.com/auth/google"><button className="social-6">Facebook Login</button></a>
+                                    <a href="https://code-fox-01.herokuapp.com/auth/facebook"><button className="social-6">Facebook Login</button></a>
                                 </div>
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faGoogle}/></span>
