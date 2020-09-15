@@ -135,9 +135,8 @@ class Login extends Component{
 
 
     facebookAuth(){
-        fetch('/auth/facebook', {
-            method: 'get'
-        }).then(res=>res.json())
+        fetch('/auth/facebook')
+        .then(res=>res.json())
         .then(result=>{
             if(result.success === true){
                 localStorage.setItem("jwt",result.token);
@@ -303,15 +302,17 @@ class Login extends Component{
                             <div className="adjust-4">
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faFacebook} /></span>
-                                    <a href="https://code-fox-01.herokuapp.com/auth/facebook"><button className="social-6">Facebook Login</button></a>
+                                    <button className="social-6" onClick={this.facebookAuth}>Facebook Login</button>
                                 </div>
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faGoogle}/></span>
-                                    <a href="https://code-fox-01.herokuapp.com/auth/google"><button className="social-6" >Google Login</button></a>
+                                    {/* <a href="https://code-fox-01.herokuapp.com/auth/google"> */}
+                                        <button className="social-6" onClick={this.googleAuth}>Google Login</button>
+                                    {/* </a> */}
                                 </div>
                                 <div className="envolope">
                                     <span className="logo-color-1"><FontAwesomeIcon icon={faGithub} /></span>
-                                    <button className="social-6" onClick={this.githubAuth}>Github Login</button>
+                                    <a href="https://code-fox-01.herokuapp.com/auth/github"><button className="social-6">Github Login</button></a>
                                 </div>
                             </div>
                         </div>

@@ -3,6 +3,14 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
+let allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Headers', "*");
+  next();
+}
+
+router.use(allowCrossDomain);
+
 router.get('/google',passport.authenticate('google',{ scope:['profile', 'email'] } ));
 router.get('/facebook',passport.authenticate('facebook'));
 router.get('/github',passport.authenticate('github'));
